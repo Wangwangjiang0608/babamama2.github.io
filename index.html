@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>汪慧玲 · 武汉大学成长之旅 | 给爸爸妈妈的汇报</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fffef5;
+            color: #3a2c1b;
+            line-height: 1.65;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --primary: #e6b422;
+            --primary-soft: #f7d44a;
+            --primary-light: #fff1b5;
+            --card-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(230, 180, 34, 0.2);
+            --hover-shadow: 0 20px 32px -12px rgba(230, 180, 34, 0.25), 0 0 0 1px #e6b42260;
+            --radius-card: 28px;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 250, 240, 0.92);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid #fff0c0;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #c9920b, #e6b422);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #5c4b2a;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover {
+            color: #e6b422;
+            border-bottom: 2px solid #e6b422;
+            padding-bottom: 4px;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            width: 28px;
+            height: 2px;
+            background: #e6b422;
+            border-radius: 2px;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -260px;
+                width: 240px;
+                height: 100vh;
+                background: #fffef8;
+                flex-direction: column;
+                padding: 80px 2rem;
+                box-shadow: -5px 0 25px rgba(0,0,0,0.08);
+                transition: 0.3s;
+                z-index: 1100;
+                gap: 1.8rem;
+            }
+            .nav-links.open { right: 0; }
+            .menu-toggle { display: flex; z-index: 1200; }
+            .navbar { padding: 0.8rem 1.2rem; }
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 70px 0 60px; scroll-margin-top: 80px; }
+        .section-title {
+            font-size: 2.4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: #d4a017;
+            border-left: 6px solid #ffd966;
+            padding-left: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .hero {
+            background: linear-gradient(145deg, #fff7e0 0%, #fff3cf 100%);
+            border-radius: 0 0 48px 48px;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero-name {
+            font-size: clamp(3rem, 12vw, 5.5rem);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #b87c00;
+            letter-spacing: -0.02em;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #7a6300;
+            margin-top: 0.5rem;
+        }
+        .photo-frame {
+            margin: 2rem auto 0;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #ffe6b3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+            border: 4px solid #fff0c0;
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card {
+            background: white;
+            border-radius: var(--radius-card);
+            box-shadow: var(--card-shadow);
+            padding: 1.8rem;
+            transition: all 0.2s ease;
+            border: 1px solid #fff0cc;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--hover-shadow);
+        }
+        .letter {
+            background: #fffef5;
+            border-radius: 32px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #ffe6aa;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #3a2c1b;
+        }
+        .letter p { margin-bottom: 1.2rem; }
+        .letter strong { color: #e6b422; }
+        .placeholder-img {
+            background: #fff8e7;
+            border: 2px dashed #ffdd99;
+            border-radius: 24px;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            color: #ad8b42;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .honor-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .honor-tag {
+            background: #fff2d7;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #b87c00;
+        }
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 32px;
+            padding: 1.2rem 1.8rem;
+            text-align: center;
+            min-width: 170px;
+            transition: 0.2s;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #ffefc0;
+        }
+        .contact-card i {
+            font-size: 1.8rem;
+            color: #e6b422;
+            margin-bottom: 0.5rem;
+        }
+        .contact-card a {
+            text-decoration: none;
+            color: #5c4b2a;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            border-top: 1px solid #ffefc0;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #b8902a;
+        }
+        .back2top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #e6b422;
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+        .back2top.show { opacity: 1; pointer-events: auto; }
+        @media (max-width: 640px) {
+            .container { padding: 0 18px; }
+            .letter { padding: 1.5rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+        .flex-placeholders {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .inline-img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin: 0.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🌼 汪汪酱的个人网站</div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#letter">近况</a></li>
+            <li><a href="#academics">学业</a></li>
+            <li><a href="#research">科研</a></li>
+            <li><a href="#honors">荣誉</a></li>
+            <li><a href="#life">生活</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-name">汪慧玲</div>
+            <div class="hero-sub">武汉大学 · 临床医学5+3一体化 | 大三</div>
+            <div class="photo-frame">
+                <img src="images/myphoto.jpg" alt="汪慧玲照片">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 长信部分 -->
+        <section id="letter">
+            <h2 class="section-title">📮 爸爸妈妈，请查收我的近况</h2>
+            <div class="letter">
+                <p>亲爱的爸爸妈妈：</p>
+                <p>大姐姐最近和我说，我在学校已经学习了3年，应该向你们汇报一下我的近况，无论是生活还是学习上。我想你们一定很好奇我在学校吃的好不好，学的累不累？前两年的我就不细说了，我说说这个学期的状况吧。</p>
+                <p><strong>📚 关于课程与作息</strong><br>这个学期从3月初开始，到现在已经上了一个半月的课。除了清明放了三天假以外，其他时候一周7天我全部要上课。下面是我的课表，7天都是早上8点到晚上5点半的课。<br>
+                <img src="images/schedule.jpg" alt="课表截图" class="inline-img"><br>
+                我现在每天晚上12点左右睡觉，7点半起床，在去教室的路上把早餐吃完——一般就是两个包子一个鸡蛋。<br>
+                上午要一直从8点上到12:15，教室人特别多，电子屏幕很刺眼，我还专门买了一个防蓝光的眼镜套在近视眼镜外面，这样看得舒服一点。每两节课之间只休息5分钟。前两节课我特别困，后两节课就特别饿，所以第三节课一般是我专注力最好的一节。<br>
+                课程内容挺多的，课上只是听老师讲，课下还要花很多时间复习、回看PPT、做题。</p>
+                <p><strong>🍱 关于吃饭与锻炼</strong><br>中午12:15下课去食堂，我一般会拿三个菜：一个膳食纤维，一个蛋白质，一个碳水。吃完回寝室差不多12:50，玩会儿手机，从1点睡到1:50，再去上下午的课（2点到5点半）。<br>
+                晚上回寝室后，我第一时间先锻炼。我买了哑铃，从3月初到4月初练了一个月，分别是1.5kg的哑铃。从一开始拿起来气喘吁吁，到后来练完半个小时都不流汗、不喘气了。不过4月初复查出来有新的视网膜裂孔，所以得悠着点，不能太累。现在我又开始复健，还是用1.5kg的哑铃。每天下课回来练半小时，然后洗头洗澡，处理杂事。</p>
+                <p><strong>💑 关于学习状态与男朋友</strong><br>你们已经知道我有男朋友了。我们平时上课也坐一起，他上课比我认真很多，学得也扎实。我上课容易走神（这个坏习惯从高中就有了），他就特别喜欢和老师互动、认真做笔记，给了我很多正向的榜样作用。晚上从图书馆出来，我们会去学校附近散步，每天也能走动一下。因为平时上课、周末也没时间，谈恋爱花销很少，我俩的兴趣都是运动、看书，最多的就是聊天。</p>
+                <p><strong>🏠 关于室友和同学关系</strong><br>我和寝室的两个女生（陈乐乐、刘若菲）从大一开始就是室友，关系特别好，算是我大学里最好的一批朋友。虽然寝室条件没那么好，但非常开心和温馨。<br>
+                班上的同学我也相处得很好，主要是性格活泼，跟谁都聊得来。之前大一大二评选优秀团员，我是唯一一个不是班干部却被选上的，单纯因为人际关系好。不过我没有利用这一点去做什么，我现在也不太想入党，因为那些事情对我来说太枯燥了，不想花时间在完全不感兴趣的东西上。虽然王力哥每次过年都跟我说要早点入党，但我交了申请书后，一点都不想去竞争积极分子。</p>
+                <p><strong>🧠 关于大学学习的真实体会</strong><br>妈妈可能不太清楚：大学里课程只是学习的一部分。我们不仅要坐在教室，还要去医院实习，自己找老师进实验室，参加各种活动，课外学习技能等等。课程分数虽然重要，但它是唯一可以被量化的成果，有应试的方法就能应对。我觉得真正能学到东西往往是在临床实习中，而不是课本上。</p>
+                <p><strong>📊 关于辅修工商管理</strong><br>我知道你们可能不太认可我报辅修，觉得我三天打鱼两天晒网，不认真学主修。这个学期我和辅修班的同学聊了，发现我们好像被学校“骗”了——这个自强创业班十年前确实办得好，全校选30人；但我们这一届只有11个人报名，所以都选上了。<br>
+                这个学期上了四门课：商业模式分析、管理学、会计学和创业领导力。商业模式分析学到了一点东西；会计学是我最喜欢的，每节课做很多笔记；剩下两门挺水的，感觉老师就是拉着我们聊天。所以课程也不是一个学生的金标准。<br>
+                班里有很多其他学院的优秀同学，他们课没我多，就会参加很多比赛、实习、做副业。我跟他们也学到了很多。我现在更觉得我不应该全是学生气，仅仅待在校园里。大学是学生和社会之间的连接平台，我应该借助它早一点接触社会。尽管医学生学习周期很长，但我不能被动跟着培养方案走——不然我也不会去选辅修。<br>
+                辅修工商管理，不是说以后一定要做管理层，而是觉得学科交叉思维很重要。不是选了这个就必须学这个，也不是学了医就必须当医生。我只是想在本科最有时间、最有精力的阶段，去尝试、学到更多有用的东西，为以后提供更多选择和机会。</p>
+                <p><strong>🚀 关于职业规划</strong><br>我现在有两条路线：<br>1️⃣ 老老实实当医生——本硕连读，学校已经把最简单的路铺好了。<br>2️⃣ 以后去医疗相关的企业工作。辅修的管理学老师建议我，趁还没读专硕之前去这些企业实习，不然无法知道自己是不是真的想去。我已经投了几份简历，但都没有消息。我也在问有实习经历的同学，还在摸索中。</p>
+                <p><strong>💪 关于生活费、身体和体重</strong><br>每个月2000元挺好的，主要是这个月检查眼睛多花了一点钱，手上有点不够用，不过爸爸已经把💰转给我了。因为忙，没时间出去玩，钱都花在吃上。但每天有轻轻锻炼，所以没长胖很多。请妈妈放心，我体重还是120左右，开学122，现在119，其实没什么变化。但是手臂和腿上的肌肉比以前明显了，身体真的变好了。体重不重要，我身高本来就高，体脂率一直非常标准、正常。身体健康没有问题。</p>
+                <p><strong>📖 关于成绩和心态</strong><br>我在学校里的学习成绩可能算中等偏上，但我不是特别在乎绩点，因为它只跟奖学金有关（每年2000元），我完全没有为了这个去卷过。正常学习就好。<br>
+                这个学期有了辅修之后，学长学姐告诉我：很多事情没法鱼和熊掌兼得。如果想成为跨学科或者涉猎广泛的学习者，就必须放弃一些东西。而且以后成为医生也一定会成为某个专科的医生，硕士只选一个方向，其他科的内容只是辅助或者全科思维。比如以后如果我干外科，那么这学期的内科学只需要及格就可以了。<br>
+                当然，妈妈肯定会说“如果能学就要最好多学”，这点我清楚，只是精力真的没有那么多。无论怎样，我还是会继续努力。</p>
+                <p><strong>📱 关于小视频和读书</strong><br>我现在还是挺喜欢刷小视频，但有意控制在每天不超过1小时。最近开始养成读书的习惯，我觉得读小说比小视频有用多了——至少是几万字几万字地读，不会那么快转移注意力。</p>
+                <p><strong>🤖 关于自学AI和计算机</strong><br>我现在还在自学一些计算机相关的东西，不是专业性的，而是应用性的。我不需要搞懂底层逻辑，而是要学会如何高效使用AI，防止自己落后于这个时代。这也是我们商业模式设计课的老师说的。</p>
+                <p>以上就是我这个学期的真实情况。你们放心，我会照顾好自己的身体，也会继续努力的。</p>
+                <p style="margin-top: 24px;">—— 小叮当</p>
+            </div>
+        </section>
+
+        <!-- 学业成绩 -->
+        <section id="academics">
+            <h2 class="section-title">📖 学业成绩 & 硬核技能</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #e6b422;"></i>
+                    <h3>主修：临床医学 (5+3一体化)</h3>
+                    <p><strong>GPA: 3.8 / 4.0</strong> · 专业排名前10%</p>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/transcript_clinical.pdf" target="_blank">点击查看主修成绩单 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line" style="font-size: 2rem; color: #e6b422;"></i>
+                    <h3>辅修：工商管理 (自强创业班)</h3>
+                    <p><strong>GPA: 4.0 / 4.0</strong> · 核心课程：会计学、商业模式分析等</p>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/transcript_business.pdf" target="_blank">点击查看辅修成绩单 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-language" style="font-size: 2rem; color: #e6b422;"></i>
+                    <h3>英语六级 CET-6</h3>
+                    <p>总分 531分</p>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/cet6.pdf" target="_blank">点击查看六级成绩单 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-code" style="font-size: 2rem; color: #e6b422;"></i>
+                    <h3>编程与数据分析</h3>
+                    <p>Python (pandas, matplotlib) · R语言基础</p>
+                    <div class="flex-placeholders">
+                        <div class="placeholder-img" style="flex:1;">
+                            📄 <a href="pdf/python_report.pdf" target="_blank">Python项目报告</a>
+                        </div>
+                        <div class="placeholder-img" style="flex:1;">
+                            📄 <a href="pdf/r_learning.pdf" target="_blank">R语言学习记录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 科研实践 -->
+        <section id="research">
+            <h2 class="section-title">🔬 科研实践 · 从课堂到临床</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-flask"></i>
+                    <h3>国家级大创项目负责人</h3>
+                    <p><strong>USP18减轻肝脏缺血再灌注损伤</strong> · 国家级立项，结题“良好”</p>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/dachuang.pdf" target="_blank">点击查看大创结题证书 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>麦吉尔大学暑期学校</h3>
+                    <p>加拿大蒙特利尔 · 职业与环境健康 · 获结业证书</p>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/mcgill.pdf" target="_blank">点击查看麦吉尔结业证书 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-database"></i>
+                    <h3>临床数据整理项目</h3>
+                    <p>妊娠合并肺动脉高压患者病历整理 · 提取30+变量</p>
+                    <div class="placeholder-img">
+                        ⚕️ 因涉及患者个人隐私，此处不放文件
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Python败血症预测分析</h3>
+                    <p>清洗19,051例数据，逻辑回归建模，课程评分第二</p>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/python_report.pdf" target="_blank">点击查看完整分析报告 (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 荣誉与活动 -->
+        <section id="honors">
+            <h2 class="section-title">🏆 荣誉 · 努力被看见</h2>
+            <div class="card">
+                <div class="honor-list">
+                    <span class="honor-tag">🏅 武汉大学优秀学生 (2023-2024)</span>
+                    <span class="honor-tag">🏅 武汉大学优秀学生 (2024-2025)</span>
+                    <span class="honor-tag">💰 优秀学生奖学金乙等 (连续两年)</span>
+                    <span class="honor-tag">🎤 形态学科普演讲大赛 全国优秀奖+校级三等奖</span>
+                </div>
+                <h3 style="margin: 1.5rem 0 0.8rem 0;">🎪 校园活动 & 志愿实践</h3>
+                <div class="honor-list">
+                    <span class="honor-tag">315知识竞答大赛</span>
+                    <span class="honor-tag">实验动物资格证考试</span>
+                    <span class="honor-tag">mini马拉松</span>
+                    <span class="honor-tag">阅读交流活动</span>
+                    <span class="honor-tag">红色文化节</span>
+                    <span class="honor-tag">微视频大赛</span>
+                    <span class="honor-tag">学习互助比赛</span>
+                    <span class="honor-tag">推文创意大赛</span>
+                    <span class="honor-tag">安全知识竞赛</span>
+                    <span class="honor-tag">校运动会</span>
+                    <span class="honor-tag">三级跳比赛</span>
+                    <span class="honor-tag">心理知识竞答赛</span>
+                    <span class="honor-tag">绘图比赛</span>
+                    <span class="honor-tag">幼儿园口腔义诊志愿活动</span>
+                    <span class="honor-tag">中南医院就诊志愿活动</span>
+                    <span class="honor-tag">化学知识竞赛</span>
+                    <span class="honor-tag">广播操比赛</span>
+                    <span class="honor-tag">心理情景剧比赛</span>
+                    <span class="honor-tag">微视频创作比赛</span>
+                    <span class="honor-tag">校园开放日志愿活动</span>
+                    <span class="honor-tag">科创训练营学生工作</span>
+                </div>
+                <div class="placeholder-img">
+                    📄 <a href="pdf/honors_all.pdf" target="_blank">点击查看我的个人简历</a>
+                </div>
+                <p style="margin-top: 1.5rem; background: #fff8e7; padding: 1rem; border-radius: 24px;">
+                    🌟 还有很多其他和专业没有直接关系的大奖。其实，这些奖项不一定能代表我的专业水平，但可以代表我在本科大学期间参与了很多活动，还是非常快乐的。无论这些活动是玩的，还是学习什么技能，总而言之，你们只需要知道我过得挺开心的就可以了。
+                </p>
+            </div>
+        </section>
+
+        <!-- 多彩生活 -->
+        <section id="life">
+            <h2 class="section-title">✨ 多彩生活 · 不止医学</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-magic"></i>
+                    <h3>德狄魔术协会 财务部负责人</h3>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/magic.pdf" target="_blank">点击查看魔术协会活动证明 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>“益起魔术”公益项目</h3>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/yqm_public.pdf" target="_blank">点击查看公益项目材料 (PDF)</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>武汉大学校学生会 人力资源管理部门</h3>
+                    <div class="placeholder-img">
+                        📄 <a href="pdf/student_union.pdf" target="_blank">点击查看校学生会工作证明 (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact">
+            <h2 class="section-title">📞 随时联系我</h2>
+            <div class="contact-grid">
+                <div class="contact-card"><i class="fas fa-phone-alt"></i><br><strong>电话</strong><br>178 7171 2771</div>
+                <div class="contact-card"><i class="fas fa-envelope"></i><br><strong>邮箱</strong><br>1802314673@qq.com</div>
+                <div class="contact-card"><i class="fab fa-weixin"></i><br><strong>微信</strong><br>Wangwangjiangjynszbd</div>
+                <div class="contact-card"><i class="fab fa-xiaohongshu"></i><br><strong>小红书</strong><br><a href="https://xhslink.com/m/5G5r0XBdVCB" target="_blank">汪汪酱（11616603642）</a></div>
+                <div class="contact-card"><i class="fab fa-tiktok"></i><br><strong>抖音</strong><br><a href="https://v.douyin.com/ony-5T35cGI/" target="_blank">汪汪酱醋茶</a></div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>🌼 感谢爸爸妈妈一直以来的爱与支持 · 我会继续踏实前行 🌼</p>
+        <p>随时欢迎给我打电话、发微信！</p>
+        <p style="font-size: 0.75rem;">© 汪慧玲 · 珞珈成长之旅 | 给父母的一份安心汇报</p>
+    </footer>
+
+    <div class="back2top" id="back2top">↑</div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if(menuToggle) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+            document.addEventListener('click', (e) => {
+                if(window.innerWidth <= 768 && !navLinks.contains(e.target) && !menuToggle.contains(e.target))
+                    navLinks.classList.remove('open');
+            });
+        }
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElem = document.getElementById(targetId);
+                if(targetElem) {
+                    targetElem.scrollIntoView({ behavior: 'smooth' });
+                    if(window.innerWidth <= 768) navLinks.classList.remove('open');
+                }
+            });
+        });
+        const backBtn = document.getElementById('back2top');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 400) backBtn.classList.add('show');
+            else backBtn.classList.remove('show');
+        });
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>
